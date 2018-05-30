@@ -1,0 +1,8 @@
+{
+  "name": "AppJornalero",
+  "app_id": "9956516c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
