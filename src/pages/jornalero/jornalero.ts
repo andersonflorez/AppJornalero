@@ -14,6 +14,7 @@ import { IonicPage, ModalController, NavController, NavParams, LoadingController
   templateUrl: 'jornalero.html',
 })
 export class JornaleroPage {
+  jornaleros
   FormJornalero = 'FormJornaleroPage';
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
     let loader = this.loadingCtrl.create({
