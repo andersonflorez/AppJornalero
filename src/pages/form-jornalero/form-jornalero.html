@@ -1,0 +1,54 @@
+<!--
+  Generated template for the FormJornaleroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="royal" (click)="closeModal()" color="primary">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form #formJornalero="ngForm" (ngSubmit)="saveJornalero(formJornalero)">
+        <ion-list>
+    
+      <ion-item>
+        <ion-label floating>Codigo</ion-label>
+        <ion-input required pattern="^[0-9]*$" type="number" name="code" ngModel></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$" minlength="3" type="text" name="name" ngModel></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Correo</ion-label>
+        <ion-input required pattern="^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$" minlength="3" type="email" name="email" ngModel></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Fecha Nacimiento</ion-label>
+        <ion-datetime required min="2018" displayFormat="DD/MM/YYYY" name="birthDate" ngModel></ion-datetime>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Peso</ion-label>
+        <ion-input required pattern="^[0-9]+$" type="number" name="weight" ngModel></ion-input>
+      </ion-item>
+    
+    </ion-list>
+    <button [disabled]="!formJornalero.valid" ion-button block>Guardar</button>
+      </form>
+    
+</ion-content>
