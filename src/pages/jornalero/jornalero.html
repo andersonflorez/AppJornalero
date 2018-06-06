@@ -16,40 +16,69 @@
   <ion-content padding>
   <ion-fab right bottom>
       <button ion-fab color="secondary" (click)="createJornalero()"><ion-icon name="add"></ion-icon></button>
-    </ion-fab>
+  </ion-fab>
+  
     <ion-list>
+      <ion-item-sliding>
       <ion-item>
-        <ion-thumbnail item-start>
+        <ion-avatar item-start>
           <img src="https://ep00.epimg.net/tecnologia/imagenes/2015/06/25/actualidad/1435248518_445335_1435251285_noticia_normal.jpg">
-        </ion-thumbnail>
+        </ion-avatar>
         <h2>Yhoan Andres Galeano</h2>
         <p>11/05/1992 • 26</p>
-        <button ion-button clear item-end>Editar</button>
+        
       </ion-item>
+      <ion-item-options side="right">
+            <button (click)="updateJornalero()" ion-button color="light">
+                <ion-icon name="build"></ion-icon>
+                Editar
+            </button>
+            <button (click)="deleteJornalero()" ion-button color="danger">
+                <ion-icon name="trash"></ion-icon>
+                Eliminar
+            </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding>
       <ion-item>
-        <ion-thumbnail item-start>
-          <img src="https://i.pinimg.com/originals/4d/94/bf/4d94bfca728561f258ae888da98fdc2c.jpg">
-        </ion-thumbnail>
-        <h2>Andersson Florez</h2>
-        <p>11/05/1997 • 20</p>
-        <button ion-button clear item-end>Editar</button>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
+        <ion-avatar item-start>
           <img src="https://pbs.twimg.com/profile_images/859702569421217792/p5FTaJy6_400x400.jpg">
-        </ion-thumbnail>
+        </ion-avatar>
         <h2>Alexandra Fernandez</h2>
         <p>11/05/2000 • 18</p>
-        <button ion-button clear item-end>Editar</button>
       </ion-item>
+      <ion-item-options side="right">
+            <button (click)="updateJornalero()" ion-button color="light">
+                <ion-icon name="build"></ion-icon>
+                Editar
+            </button>
+            <button (click)="deleteJornalero()" ion-button color="danger">
+                <ion-icon name="trash"></ion-icon>
+                Eliminar
+            </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding>
       <ion-item>
-        <ion-thumbnail item-start>
+        <ion-avatar item-start>
           <img src="https://http2.mlstatic.com/oso-panda-de-peluche-D_NQ_NP_959799-MLM25593697859_052017-F.jpg">
-        </ion-thumbnail>
+        </ion-avatar>
         <h2>Juan Camilo Gomez</h2>
         <p>11/05/1995 • 22</p>
-        <button ion-button clear item-end>Editar</button>
       </ion-item>
-    </ion-list>
+      <ion-item-options side="right">
+            <button (click)="updateJornalero()" ion-button color="light">
+                <ion-icon name="build"></ion-icon>
+                Editar
+            </button>
+            <button (click)="deleteJornalero()" ion-button color="danger">
+                <ion-icon name="trash"></ion-icon>
+                Eliminar
+            </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list> 
+
+
   </ion-content>
   

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the JornaleroPage page.
@@ -14,15 +15,19 @@ import { IonicPage, ModalController, NavController, NavParams, LoadingController
   templateUrl: 'jornalero.html',
 })
 export class JornaleroPage {
-  jornaleros
-  FormJornalero = 'FormJornaleroPage';
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
-    let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 3000
-    });
-    console.log(loader);
-    loader.present();
+  
+    FormJornalero = 'FormJornaleroPage';
+
+    jornalero = {
+      code: 1,
+      name: "Pepito Perez",
+      email: "example@example.com",
+      date: "1987/07/07",
+      weight: 80,
+    };
+
+  constructor(private alertCtrl: AlertController, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+        
   }
   
   createJornalero(){
@@ -35,7 +40,37 @@ export class JornaleroPage {
     modal.present();
   }
 
-  updateJornalero(){
-
+  updateJornalero(jornalero){
+    let paramUpdate = {
+      title: 'Actualizar Jornalero',
+      update: true,
+      jornalero:jornalero
+    };
+    let modal = this.modalCtrl.create(this.FormJornalero, paramUpdate);
+    modal.present();
   }
+  
+  deleteJornalero(){
+    let alert = this.alertCtrl.create({
+      title: 'Eliminar Jornalero',
+      message: '¿Desea eliminar el Jornalero?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Aceptar',
+          handler: () => {
+            //console.log('Buy clicked');
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
 }
